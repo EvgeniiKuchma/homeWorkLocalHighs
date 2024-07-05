@@ -12,6 +12,7 @@ namespace homeWorkLocalHighs
 
             int minRangeValue = 0;
             int maxRangeValue = 21;
+            int lastIndex = 1;
 
             int[] array = new int[arraySize];
 
@@ -31,14 +32,10 @@ namespace homeWorkLocalHighs
             {
                 Console.WriteLine("начальный максимум - " + array[0] + "\n");
             }
-            if (array[arraySize - 1] > array[arraySize - 2])
-            {
-                Console.WriteLine("конечный максимум - " + array[arraySize - 1] + "\n");
-            }
 
             Console.Write("максимумы: ");
 
-            for (int i = 1; i < arraySize - 1; i++)
+            for (int i = 1; i < arraySize - lastIndex; i++)
             {
                 if (array[i] > array[i + 1] && array[i] > array[i - 1])
                 {
@@ -47,6 +44,11 @@ namespace homeWorkLocalHighs
             }
 
             Console.WriteLine("\n");
+
+            if (array[arraySize - 1] > array[arraySize - 2])
+            {
+                Console.WriteLine("конечный максимум - " + array[arraySize - 1] + "\n");
+            }
         }
     }
 }
